@@ -48,7 +48,7 @@ abstract class CommonExtension(
             override fun publication(action: Action<CommonPublication>) {
 
                 val publication = CommonPublication(
-                    publishingExt.publications.create("release", MavenPublication::class.java),
+                    publishingExt.publications.create("${project.name}-release", MavenPublication::class.java),
                     project,
                     this@CommonExtension
                 )

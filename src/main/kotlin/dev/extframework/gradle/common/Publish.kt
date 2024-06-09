@@ -12,7 +12,7 @@ interface CommonPublishing {
     fun repositories(action: Action<in RepositoryHandler>)
 }
 
-internal fun credentialMessage(id: String) : String = "Failed to find credentials! Please define : '$id'"
+internal fun credentialMessage(id: String) : String = "Failed to find credentials! Please define : '$id' or set 'creds.maven.warn' to 'true'."
 
 class CredentialsException(
     id: String
