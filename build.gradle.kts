@@ -39,9 +39,7 @@ publishing {
         if (!project.hasProperty("maven-user") || !project.hasProperty("maven-pass")) return@repositories
 
         maven {
-            val repo = if (project.findProperty("isSnapshot") == "true") "snapshots" else "releases"
-
-            url = uri("htts://maven.extframework.dev/$repo")
+            url = uri("https://maven.extframework.dev/releases")
 
             credentials {
                 username = project.findProperty("maven-user") as String
