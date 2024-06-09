@@ -1,11 +1,8 @@
-import dev.extframework.gradle.common.commonUtil
 import dev.extframework.gradle.common.durganMcBroom
 import dev.extframework.gradle.common.extFramework
-import dev.extframework.gradle.common.extLoader
 
 plugins {
     kotlin("jvm") version "1.9.21"
-
 
     id("dev.extframework.common") version "1.0"
 }
