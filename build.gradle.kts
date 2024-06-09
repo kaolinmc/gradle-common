@@ -36,15 +36,16 @@ gradlePlugin {
 
 publishing {
     repositories {
-        if (!project.hasProperty("maven-user") || !project.hasProperty("maven-pass")) return@repositories
+        if (!project.hasProperty("maven-user") || !project.hasProperty("maven-secret")) return@repositories
 
         maven {
             url = uri("https://maven.extframework.dev/releases")
 
             credentials {
                 username = project.findProperty("maven-user") as String
-                password = project.findProperty("maven-pass") as String
+                password = project.findProperty("maven-secret") as String
             }
+
             authentication {
                 create<BasicAuthentication>("basic")
             }
