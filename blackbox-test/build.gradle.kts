@@ -4,7 +4,7 @@ import dev.extframework.gradle.common.extFramework
 plugins {
     kotlin("jvm") version "1.9.21"
 
-    id("dev.extframework.common") version "1.0"
+    id("dev.extframework.common") version "1.0.4"
 }
 
 group = "dev.extframework"
@@ -14,9 +14,6 @@ repositories {
     mavenCentral()
     extFramework()
     durganMcBroom()
-}
-
-dependencies {
 }
 
 common {
@@ -40,10 +37,6 @@ common {
 
         }
     }
-}
-
-dependencies {
-
 }
 
 tasks.test {

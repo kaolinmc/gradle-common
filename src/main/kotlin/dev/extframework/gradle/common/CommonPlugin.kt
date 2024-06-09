@@ -67,7 +67,7 @@ abstract class CommonExtension(
 
         project.tasks.withType(Jar::class.java).named("sourcesJar").configure {
             it.archiveClassifier.set("sources")
-            it.from(project.extensions.getByType(SourceSetContainer::class.java).map(SourceSet::getAllSource))
+            it.from(project.extensions.getByType(SourceSetContainer::class.java).getByName( "main").allSource)
         }
 
         return jar
