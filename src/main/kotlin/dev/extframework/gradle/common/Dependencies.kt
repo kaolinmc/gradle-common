@@ -16,6 +16,8 @@ const val ARCHIVE_MAPPER_VERSION = "1.2.1-SNAPSHOT"
 
 const val ARCHIVES_VERSION = "1.2-SNAPSHOT"
 
+const val OBJECT_CONTAINER_VERSION = "1.0-SNAPSHOT"
+
 fun DependencyHandler.commonUtil(
     version: String = COMMON_UTIL_VERSION,
     configurationName: String = DEFAULT_CONF
@@ -34,10 +36,27 @@ fun DependencyHandler.extLoader(
 
 fun DependencyHandler.boot(
     version: String = BOOT_VERSION,
+    configurationName: String = DEFAULT_CONF,
+
+    test: Boolean = false
+) {
+    add(
+        configurationName,
+        "$BASE_GROUP:boot:$version"
+    )
+
+    if (test) add(
+        "testImplementation",
+        "$BASE_GROUP:boot-test:$version"
+    )
+}
+
+fun DependencyHandler.objectContainer(
+    version: String = OBJECT_CONTAINER_VERSION,
     configurationName: String = DEFAULT_CONF
 ) = add(
     configurationName,
-    "$BASE_GROUP:boot:$version"
+    "$BASE_GROUP:object-container:$version"
 )
 
 fun DependencyHandler.launcherMetaHandler(
@@ -59,6 +78,7 @@ fun DependencyHandler.minecraftBootstrapper(
 fun DependencyHandler.archiveMapper(
     tiny: Boolean = false,
     proguard: Boolean = false,
+    transform: Boolean = false,
 
     version: String = ARCHIVE_MAPPER_VERSION,
     configurationName: String = DEFAULT_CONF
@@ -67,6 +87,7 @@ fun DependencyHandler.archiveMapper(
 
     if (tiny) add(configurationName,"$BASE_GROUP:archive-mapper-tiny:$version")
     if (proguard) add(configurationName,"$BASE_GROUP:archive-mapper-proguard:$version")
+    if (transform) add(configurationName, "$BASE_GROUP:archive-mapper-transform:$version")
 }
 
 fun DependencyHandler.archives(
