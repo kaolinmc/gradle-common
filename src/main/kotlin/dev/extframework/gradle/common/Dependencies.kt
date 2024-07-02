@@ -1,5 +1,6 @@
 package dev.extframework.gradle.common
 
+import org.gradle.api.artifacts.ExternalModuleDependency
 import org.gradle.api.artifacts.dsl.DependencyHandler
 
 const val COMMON_UTIL_VERSION = "1.1.3-SNAPSHOT"
@@ -12,16 +13,28 @@ const val LAUNCHER_META_HANDLER_VERSION = "1.1.2-SNAPSHOT"
 
 const val MINECRAFT_BOOTSTRAPPER_VERSION = "1.0-SNAPSHOT"
 
-const val ARCHIVE_MAPPER_VERSION = "1.2.2-SNAPSHOT"
+const val ARCHIVE_MAPPER_VERSION = "1.2.3-SNAPSHOT"
 
 const val ARCHIVES_VERSION = "1.2-SNAPSHOT"
 
 const val OBJECT_CONTAINER_VERSION = "1.0-SNAPSHOT"
 
+private fun DependencyHandler.addConfigured(
+    configuration: String,
+    notation: String
+) {
+    val dependency = add(
+        configuration,
+        notation,
+    ) as ExternalModuleDependency
+
+    dependency.isChanging = true
+}
+
 fun DependencyHandler.commonUtil(
     version: String = COMMON_UTIL_VERSION,
     configurationName: String = DEFAULT_CONF
-) = add(
+) = addConfigured(
     configurationName,
     "$BASE_GROUP:common-util:$version"
 )
@@ -29,7 +42,7 @@ fun DependencyHandler.commonUtil(
 fun DependencyHandler.extLoader(
     version: String = EXT_LOADER_VERSION,
     configurationName: String = DEFAULT_CONF
-) = add(
+) = addConfigured(
     configurationName,
     "$BASE_GROUP.components:ext-loader:$version"
 )
@@ -40,12 +53,12 @@ fun DependencyHandler.boot(
 
     test: Boolean = false
 ) {
-    add(
+    addConfigured(
         configurationName,
         "$BASE_GROUP:boot:$version"
     )
 
-    if (test) add(
+    if (test) addConfigured(
         "testImplementation",
         "$BASE_GROUP:boot-test:$version"
     )
@@ -54,7 +67,7 @@ fun DependencyHandler.boot(
 fun DependencyHandler.objectContainer(
     version: String = OBJECT_CONTAINER_VERSION,
     configurationName: String = DEFAULT_CONF
-) = add(
+) = addConfigured(
     configurationName,
     "$BASE_GROUP:object-container:$version"
 )
@@ -62,7 +75,7 @@ fun DependencyHandler.objectContainer(
 fun DependencyHandler.launcherMetaHandler(
     version: String = LAUNCHER_META_HANDLER_VERSION,
     configurationName: String = DEFAULT_CONF
-) = add(
+) = addConfigured(
     configurationName,
     "$BASE_GROUP:launchermeta-handler:$version"
 )
@@ -70,7 +83,7 @@ fun DependencyHandler.launcherMetaHandler(
 fun DependencyHandler.minecraftBootstrapper(
     version: String = MINECRAFT_BOOTSTRAPPER_VERSION,
     configurationName: String = DEFAULT_CONF
-) = add(
+) = addConfigured(
     configurationName,
     "$BASE_GROUP.components:minecraft-bootstrapper:$version"
 )
@@ -83,11 +96,11 @@ fun DependencyHandler.archiveMapper(
     version: String = ARCHIVE_MAPPER_VERSION,
     configurationName: String = DEFAULT_CONF
 ) {
-    add(configurationName,"$BASE_GROUP:archive-mapper:$version")
+    addConfigured(configurationName, "$BASE_GROUP:archive-mapper:$version")
 
-    if (tiny) add(configurationName,"$BASE_GROUP:archive-mapper-tiny:$version")
-    if (proguard) add(configurationName,"$BASE_GROUP:archive-mapper-proguard:$version")
-    if (transform) add(configurationName, "$BASE_GROUP:archive-mapper-transform:$version")
+    if (tiny) addConfigured(configurationName, "$BASE_GROUP:archive-mapper-tiny:$version")
+    if (proguard) addConfigured(configurationName, "$BASE_GROUP:archive-mapper-proguard:$version")
+    if (transform) addConfigured(configurationName, "$BASE_GROUP:archive-mapper-transform:$version")
 }
 
 fun DependencyHandler.archives(
@@ -96,7 +109,7 @@ fun DependencyHandler.archives(
     version: String = ARCHIVES_VERSION,
     configurationName: String = DEFAULT_CONF
 ) {
-    add(configurationName, "$BASE_GROUP:archives:$version")
+    addConfigured(configurationName, "$BASE_GROUP:archives:$version")
 
-    if (mixin) add(configurationName, "$BASE_GROUP:archives-mixin:$version")
+    if (mixin) addConfigured(configurationName, "$BASE_GROUP:archives-mixin:$version")
 }

@@ -20,6 +20,10 @@ class CommonPlugin : Plugin<Project> {
 
         target.project.pluginManager.apply("maven-publish")
         target.project.pluginManager.apply("org.jetbrains.dokka")
+
+        target.configurations.all { configuration ->
+            configuration.resolutionStrategy.cacheChangingModulesFor(0, "seconds")
+        }
     }
 }
 
