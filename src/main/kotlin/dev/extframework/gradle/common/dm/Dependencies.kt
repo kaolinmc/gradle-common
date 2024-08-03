@@ -12,7 +12,6 @@ const val ARTIFACT_RESOLVER_VERSION = "1.2.1-SNAPSHOT"
 fun DependencyHandler.resourceApi(
     version: String = RESOURCE_API_VERSION,
     configurationName: String = DEFAULT_CONF
-
 ) = add(
     configurationName,
     "com.durganmcbroom:resource-api:$version",
