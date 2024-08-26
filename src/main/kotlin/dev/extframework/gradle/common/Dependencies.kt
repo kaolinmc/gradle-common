@@ -7,13 +7,21 @@ const val COMMON_UTIL_VERSION = "1.1.3-SNAPSHOT"
 
 const val EXT_LOADER_VERSION = "2.0-SNAPSHOT"
 
-const val BOOT_VERSION = "3.1-SNAPSHOT"
+const val TOOLING_API_VERSION = "1.0-SNAPSHOT"
+
+const val CORE_VERSION = "1.0-SNAPSHOT"
+
+const val CORE_API_VERSION = "1.0-SNAPSHOT"
+
+const val CORE_MC_VERSION = "1.0-SNAPSHOT"
+
+const val BOOT_VERSION = "3.2.1-SNAPSHOT"
 
 const val LAUNCHER_META_HANDLER_VERSION = "1.1.3-SNAPSHOT"
 
 const val MINECRAFT_BOOTSTRAPPER_VERSION = "2.0.1-SNAPSHOT"
 
-const val ARCHIVE_MAPPER_VERSION = "1.2.3-SNAPSHOT"
+const val ARCHIVE_MAPPER_VERSION = "1.3-SNAPSHOT"
 
 const val ARCHIVES_VERSION = "1.2-SNAPSHOT"
 
@@ -102,6 +110,21 @@ fun DependencyHandler.archiveMapper(
     if (proguard) addConfigured(configurationName, "$BASE_GROUP:archive-mapper-proguard:$version")
     if (transform) addConfigured(configurationName, "$BASE_GROUP:archive-mapper-transform:$version")
 }
+
+fun DependencyHandler.toolingApi(
+    version: String = TOOLING_API_VERSION,
+    configurationName: String = DEFAULT_CONF
+) {
+    addConfigured(configurationName, "$BASE_GROUP:tooling-api:$version")
+}
+
+fun DependencyHandler.coreApi(
+    version: String = CORE_API_VERSION,
+    configurationName: String = DEFAULT_CONF
+) {
+    addConfigured(configurationName, "$BASE_GROUP:core-api:$version")
+}
+
 
 fun DependencyHandler.archives(
     mixin: Boolean = false,

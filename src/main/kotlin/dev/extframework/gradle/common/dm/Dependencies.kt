@@ -3,9 +3,9 @@ package dev.extframework.gradle.common.dm
 import dev.extframework.gradle.common.DEFAULT_CONF
 import org.gradle.api.artifacts.dsl.DependencyHandler
 
-const val RESOURCE_API_VERSION = "1.1.4-SNAPSHOT"
+const val RESOURCE_API_VERSION = "1.1.5-SNAPSHOT"
 
-const val JOBS_VERSION = "1.3-SNAPSHOT"
+const val JOBS_VERSION = "1.3.1-SNAPSHOT"
 
 const val ARTIFACT_RESOLVER_VERSION = "1.2.1-SNAPSHOT"
 
