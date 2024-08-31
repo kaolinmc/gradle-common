@@ -52,7 +52,7 @@ fun DependencyHandler.extLoader(
     configurationName: String = DEFAULT_CONF
 ) = addConfigured(
     configurationName,
-    "$BASE_GROUP.components:ext-loader:$version"
+    "$BASE_GROUP:ext-loader:$version"
 )
 
 fun DependencyHandler.boot(
