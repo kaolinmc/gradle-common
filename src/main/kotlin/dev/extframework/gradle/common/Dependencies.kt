@@ -93,7 +93,7 @@ fun DependencyHandler.minecraftBootstrapper(
     configurationName: String = DEFAULT_CONF
 ) = addConfigured(
     configurationName,
-    "$BASE_GROUP.components:minecraft-bootstrapper:$version"
+    "$BASE_GROUP:minecraft-bootstrapper:$version"
 )
 
 fun DependencyHandler.archiveMapper(
