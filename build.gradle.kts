@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "dev.extframework"
-version = "1.0.14"
+version = "1.0.15"
 
 repositories {
     mavenCentral()
