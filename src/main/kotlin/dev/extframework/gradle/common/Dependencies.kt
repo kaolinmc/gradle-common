@@ -13,7 +13,7 @@ const val CORE_VERSION = "1.0.1-SNAPSHOT"
 
 const val CORE_API_VERSION = "1.0-SNAPSHOT"
 
-const val CORE_MC_VERSION = "1.0-SNAPSHOT"
+const val CORE_MC_VERSION = "1.0.2-SNAPSHOT"
 
 const val BOOT_VERSION = "3.2.1-SNAPSHOT"
 
