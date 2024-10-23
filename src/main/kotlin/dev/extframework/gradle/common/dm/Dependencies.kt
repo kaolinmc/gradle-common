@@ -8,6 +8,7 @@ const val RESOURCE_API_VERSION = "1.1.6-SNAPSHOT"
 const val JOBS_VERSION = "1.3.1-SNAPSHOT"
 
 const val ARTIFACT_RESOLVER_VERSION = "1.2.3-SNAPSHOT"
+const val ARTIFACT_RESOLVER_VERSION_MAVEN = "1.2.4-SNAPSHOT"
 
 fun DependencyHandler.resourceApi(
     version: String = RESOURCE_API_VERSION,
@@ -34,9 +35,10 @@ fun DependencyHandler.artifactResolver(
     maven: Boolean = true,
 
     version: String = ARTIFACT_RESOLVER_VERSION,
+    mavenVersion: String = ARTIFACT_RESOLVER_VERSION_MAVEN,
     configurationName: String = DEFAULT_CONF
 )  {
     add(configurationName, "com.durganmcbroom:artifact-resolver:$version")
 
-    if (maven) add(configurationName, "com.durganmcbroom:artifact-resolver-simple-maven:$version")
+    if (maven) add(configurationName, "com.durganmcbroom:artifact-resolver-simple-maven:$mavenVersion")
 }
