@@ -1,6 +1,7 @@
 package dev.extframework.gradle.common
 
 import org.gradle.api.Action
+import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.artifacts.dsl.RepositoryHandler
@@ -12,6 +13,8 @@ import org.gradle.api.tasks.SourceSetContainer
 import org.gradle.api.tasks.compile.JavaCompile
 import org.gradle.api.tasks.testing.Test
 import org.gradle.jvm.tasks.Jar
+import org.gradle.jvm.toolchain.JavaLanguageVersion
+import org.gradle.jvm.toolchain.JavaToolchainService
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 class CommonPlugin : Plugin<Project> {
@@ -71,7 +74,7 @@ abstract class CommonExtension(
 
         project.tasks.withType(Jar::class.java).named("sourcesJar").configure {
             it.archiveClassifier.set("sources")
-            it.from(project.extensions.getByType(SourceSetContainer::class.java).getByName( "main").allSource)
+            it.from(project.extensions.getByType(SourceSetContainer::class.java).getByName("main").allSource)
         }
 
         return jar
@@ -99,13 +102,13 @@ abstract class CommonExtension(
             )
 
             comp.kotlinOptions {
-                jvmTarget = "17"
+                jvmTarget = "1.8"
             }
         }
 
         project.tasks.withType(KotlinCompile::class.java).named("compileTestKotlin") { comp ->
             comp.kotlinOptions {
-                jvmTarget = "17"
+                jvmTarget = "1.8"
             }
         }
 
@@ -114,8 +117,17 @@ abstract class CommonExtension(
         }
 
         compileJava.configure {
-            it.targetCompatibility = "17"
-            it.sourceCompatibility = "17"
+            it.sourceCompatibility = "1.8"
+            it.targetCompatibility = "1.8"
         }
+
+        val javaToolchainService = project.extensions.getByType(JavaToolchainService::class.java)
+        val javaToolchainSpec = javaToolchainService.compilerFor {
+            it.languageVersion.set(JavaLanguageVersion.of(8))
+        }
+        project.tasks.withType(JavaCompile::class.java).configureEach {
+            it.javaCompiler.set(javaToolchainSpec)
+        }
+
     }
 }
