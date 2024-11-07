@@ -23,9 +23,9 @@ const val MINECRAFT_BOOTSTRAPPER_VERSION = "2.10-SNAPSHOT"
 
 const val ARCHIVE_MAPPER_VERSION = "1.3.1-SNAPSHOT"
 
-const val ARCHIVES_VERSION = "1.2-SNAPSHOT"
+const val ARCHIVES_VERSION = "1.3-SNAPSHOT"
 
-const val OBJECT_CONTAINER_VERSION = "1.0-SNAPSHOT"
+const val OBJECT_CONTAINER_VERSION = "1.1-SNAPSHOT"
 
 private fun DependencyHandler.addConfigured(
     configuration: String,

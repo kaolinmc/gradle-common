@@ -128,6 +128,5 @@ abstract class CommonExtension(
         project.tasks.withType(JavaCompile::class.java).configureEach {
             it.javaCompiler.set(javaToolchainSpec)
         }
-
     }
 }
