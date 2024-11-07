@@ -3,7 +3,7 @@ package dev.extframework.gradle.common
 import org.gradle.api.artifacts.ExternalModuleDependency
 import org.gradle.api.artifacts.dsl.DependencyHandler
 
-const val COMMON_UTIL_VERSION = "1.1.3-SNAPSHOT"
+const val COMMON_UTIL_VERSION = "1.2-SNAPSHOT"
 
 const val EXT_LOADER_VERSION = "2.1.6-SNAPSHOT"
 
