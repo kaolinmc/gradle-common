@@ -21,7 +21,7 @@ const val LAUNCHER_META_HANDLER_VERSION = "1.2-SNAPSHOT"
 
 const val MINECRAFT_BOOTSTRAPPER_VERSION = "2.0.11-SNAPSHOT"
 
-const val ARCHIVE_MAPPER_VERSION = "1.3.2-SNAPSHOT"
+const val ARCHIVE_MAPPER_VERSION = "1.3.3-SNAPSHOT"
 
 const val ARCHIVES_VERSION = "1.3.1-SNAPSHOT"
 
@@ -100,6 +100,7 @@ fun DependencyHandler.archiveMapper(
     tiny: Boolean = false,
     proguard: Boolean = false,
     transform: Boolean = false,
+    mcpLegacy:  Boolean = false,
 
     version: String = ARCHIVE_MAPPER_VERSION,
     configurationName: String = DEFAULT_CONF
@@ -109,6 +110,7 @@ fun DependencyHandler.archiveMapper(
     if (tiny) addConfigured(configurationName, "$BASE_GROUP:archive-mapper-tiny:$version")
     if (proguard) addConfigured(configurationName, "$BASE_GROUP:archive-mapper-proguard:$version")
     if (transform) addConfigured(configurationName, "$BASE_GROUP:archive-mapper-transform:$version")
+    if (mcpLegacy) addConfigured(configurationName, "$BASE_GROUP:archive-mapper-mcp-legacy:$version")
 }
 
 fun DependencyHandler.toolingApi(
