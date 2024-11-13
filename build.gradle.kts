@@ -9,7 +9,6 @@ group = "dev.extframework"
 version = "1.0.36"
 
 repositories {
-repositories {
     mavenCentral()
     gradlePluginPortal()
 }
