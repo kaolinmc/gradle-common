@@ -5,15 +5,15 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
 
 const val COMMON_UTIL_VERSION = "1.2-SNAPSHOT"
 
-const val EXT_LOADER_VERSION = "2.1.11-SNAPSHOT"
+const val EXT_LOADER_VERSION = "2.1.12-SNAPSHOT"
 
-const val TOOLING_API_VERSION = "1.0.5-SNAPSHOT"
+const val TOOLING_API_VERSION = "1.0.6-SNAPSHOT"
 
-const val CORE_VERSION = "1.0.8-BETA"
+const val CORE_VERSION = "1.0.9-BETA"
 
 const val CORE_API_VERSION = "1.0.2-SNAPSHOT"
 
-const val CORE_MC_VERSION = "1.0.15-BETA"
+const val CORE_MC_VERSION = "1.0.16-BETA"
 
 const val BOOT_VERSION = "3.4.4-SNAPSHOT"
 
