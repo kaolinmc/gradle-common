@@ -3,7 +3,7 @@ package dev.extframework.gradle.common
 import org.gradle.api.artifacts.ExternalModuleDependency
 import org.gradle.api.artifacts.dsl.DependencyHandler
 
-const val COMMON_UTIL_VERSION = "1.2-SNAPSHOT"
+const val COMMON_UTIL_VERSION = "1.2.1-SNAPSHOT"
 
 const val EXT_LOADER_VERSION = "2.1.12-SNAPSHOT"
 
@@ -15,15 +15,15 @@ const val CORE_API_VERSION = "1.0.2-SNAPSHOT"
 
 const val CORE_MC_VERSION = "1.0.16-BETA"
 
-const val BOOT_VERSION = "3.4.4-SNAPSHOT"
+const val BOOT_VERSION = "3.4.5-SNAPSHOT"
 
-const val LAUNCHER_META_HANDLER_VERSION = "1.2-SNAPSHOT"
+const val LAUNCHER_META_HANDLER_VERSION = "1.3-SNAPSHOT"
 
 const val MINECRAFT_BOOTSTRAPPER_VERSION = "2.0.13-SNAPSHOT"
 
 const val ARCHIVE_MAPPER_VERSION = "1.3.4-SNAPSHOT"
 
-const val ARCHIVES_VERSION = "1.4-SNAPSHOT"
+const val ARCHIVES_VERSION = "1.5-SNAPSHOT"
 
 const val OBJECT_CONTAINER_VERSION = "1.1-SNAPSHOT"
 
