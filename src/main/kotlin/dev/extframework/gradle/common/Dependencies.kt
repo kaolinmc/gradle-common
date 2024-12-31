@@ -15,6 +15,8 @@ const val CORE_API_VERSION = "1.0.2-SNAPSHOT"
 
 const val CORE_MC_VERSION = "1.0.17-BETA"
 
+const val CORE_MC_API_VERSION = "1.0-SNAPSHOT"
+
 const val BOOT_VERSION = "3.4.5-SNAPSHOT"
 
 const val LAUNCHER_META_HANDLER_VERSION = "1.3-SNAPSHOT"
@@ -127,6 +129,12 @@ fun DependencyHandler.coreApi(
     addConfigured(configurationName, "$BASE_GROUP:core-api:$version")
 }
 
+fun DependencyHandler.coreMcApi(
+    version: String = CORE_MC_API_VERSION,
+    configurationName: String = DEFAULT_CONF
+) {
+    addConfigured(configurationName, "$BASE_GROUP:core-mc-api:$version")
+}
 
 fun DependencyHandler.archives(
     mixin: Boolean = false,
