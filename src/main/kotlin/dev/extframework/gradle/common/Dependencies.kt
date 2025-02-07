@@ -29,6 +29,8 @@ const val ARCHIVES_VERSION = "1.5-SNAPSHOT"
 
 const val OBJECT_CONTAINER_VERSION = "1.1-SNAPSHOT"
 
+const val MIXIN_VERSION = "1.0-SNAPSHOT"
+
 private fun DependencyHandler.addConfigured(
     configuration: String,
     notation: String
@@ -145,4 +147,11 @@ fun DependencyHandler.archives(
     addConfigured(configurationName, "$BASE_GROUP:archives:$version")
 
     if (mixin) addConfigured(configurationName, "$BASE_GROUP:archives-mixin:$version")
+}
+
+fun DependencyHandler.mixin(
+    version: String = MIXIN_VERSION,
+    configurationName: String = DEFAULT_CONF
+) {
+    addConfigured(configurationName, "$BASE_GROUP:mixin:$version")
 }
