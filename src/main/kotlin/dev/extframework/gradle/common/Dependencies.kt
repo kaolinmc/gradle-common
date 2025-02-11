@@ -7,21 +7,21 @@ const val COMMON_UTIL_VERSION = "1.2.1-SNAPSHOT"
 
 const val EXT_LOADER_VERSION = "2.1.14-SNAPSHOT"
 
-const val TOOLING_API_VERSION = "1.0.6-SNAPSHOT"
+const val TOOLING_API_VERSION = "1.0.7-SNAPSHOT"
 
-const val CORE_VERSION = "1.0.10-BETA"
+//const val CORE_VERSION = "1.0.10-BETA"
 
-const val CORE_API_VERSION = "1.0.2-SNAPSHOT"
+//const val CORE_API_VERSION = "1.0.2-SNAPSHOT"
 
-const val CORE_MC_VERSION = "1.0.20-BETA"
+//const val CORE_MC_VERSION = "1.0.20-BETA"
 
-const val CORE_MC_API_VERSION = "1.1-SNAPSHOT"
+//const val CORE_MC_API_VERSION = "1.1-SNAPSHOT"
 
-const val BOOT_VERSION = "3.4.5-SNAPSHOT"
+const val BOOT_VERSION = "3.6-SNAPSHOT"
 
 const val LAUNCHER_META_HANDLER_VERSION = "1.3-SNAPSHOT"
 
-const val MINECRAFT_BOOTSTRAPPER_VERSION = "2.0.14-SNAPSHOT"
+//const val MINECRAFT_BOOTSTRAPPER_VERSION = "2.0.14-SNAPSHOT"
 
 const val ARCHIVE_MAPPER_VERSION = "1.3.6-SNAPSHOT"
 
@@ -29,7 +29,7 @@ const val ARCHIVES_VERSION = "1.5-SNAPSHOT"
 
 const val OBJECT_CONTAINER_VERSION = "1.1-SNAPSHOT"
 
-const val MIXIN_VERSION = "1.0-SNAPSHOT"
+const val MIXIN_VERSION = "1.0.1-SNAPSHOT"
 
 private fun DependencyHandler.addConfigured(
     configuration: String,
@@ -92,13 +92,13 @@ fun DependencyHandler.launcherMetaHandler(
     "$BASE_GROUP:launchermeta-handler:$version"
 )
 
-fun DependencyHandler.minecraftBootstrapper(
-    version: String = MINECRAFT_BOOTSTRAPPER_VERSION,
-    configurationName: String = DEFAULT_CONF
-) = addConfigured(
-    configurationName,
-    "$BASE_GROUP:minecraft-bootstrapper:$version"
-)
+//fun DependencyHandler.minecraftBootstrapper(
+//    version: String = MINECRAFT_BOOTSTRAPPER_VERSION,
+//    configurationName: String = DEFAULT_CONF
+//) = addConfigured(
+//    configurationName,
+//    "$BASE_GROUP:minecraft-bootstrapper:$version"
+//)
 
 fun DependencyHandler.archiveMapper(
     tiny: Boolean = false,
@@ -124,19 +124,19 @@ fun DependencyHandler.toolingApi(
     addConfigured(configurationName, "$BASE_GROUP:tooling-api:$version")
 }
 
-fun DependencyHandler.coreApi(
-    version: String = CORE_API_VERSION,
-    configurationName: String = DEFAULT_CONF
-) {
-    addConfigured(configurationName, "$BASE_GROUP:core-api:$version")
-}
-
-fun DependencyHandler.coreMcApi(
-    version: String = CORE_MC_API_VERSION,
-    configurationName: String = DEFAULT_CONF
-) {
-    addConfigured(configurationName, "$BASE_GROUP:core-mc-api:$version")
-}
+//fun DependencyHandler.coreApi(
+//    version: String = CORE_API_VERSION,
+//    configurationName: String = DEFAULT_CONF
+//) {
+//    addConfigured(configurationName, "$BASE_GROUP:core-api:$version")
+//}
+//
+//fun DependencyHandler.coreMcApi(
+//    version: String = CORE_MC_API_VERSION,
+//    configurationName: String = DEFAULT_CONF
+//) {
+//    addConfigured(configurationName, "$BASE_GROUP:core-mc-api:$version")
+//}
 
 fun DependencyHandler.archives(
     mixin: Boolean = false,
