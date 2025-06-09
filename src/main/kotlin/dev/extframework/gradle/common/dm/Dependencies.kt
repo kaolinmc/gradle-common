@@ -7,8 +7,7 @@ const val RESOURCE_API_VERSION = "1.2.1-SNAPSHOT"
 
 const val JOBS_VERSION = "1.3.2-SNAPSHOT"
 
-const val ARTIFACT_RESOLVER_VERSION = "1.4-SNAPSHOT"
-//const val ARTIFACT_RESOLVER_VERSION_MAVEN = "1.3-SNAPSHOT"
+const val ARTIFACT_RESOLVER_VERSION = "1.4.1-SNAPSHOT"
 
 fun DependencyHandler.resourceApi(
     version: String = RESOURCE_API_VERSION,
