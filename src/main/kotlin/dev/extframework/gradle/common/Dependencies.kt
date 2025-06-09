@@ -5,9 +5,9 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
 
 const val COMMON_UTIL_VERSION = "1.2.1-SNAPSHOT"
 
-const val EXT_LOADER_VERSION = "2.1.18-SNAPSHOT"
+const val EXT_LOADER_VERSION = "2.1.17-SNAPSHOT"
 
-const val TOOLING_API_VERSION = "1.0.9-SNAPSHOT"
+const val TOOLING_API_VERSION = "1.0.8-SNAPSHOT"
 
 const val BOOT_VERSION = "3.6.2-SNAPSHOT"
 
