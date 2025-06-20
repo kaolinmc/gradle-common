@@ -20,6 +20,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 class CommonPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         target.extensions.create("common", CommonExtension::class.java, target)
+        if (target.rootProject.extensions.findByType(DependencyManagement::class.java) == null)
+            target.rootProject.extensions.create("dependencyManagement", DependencyManagement::class.java)
 
         target.project.pluginManager.apply("maven-publish")
         target.project.pluginManager.apply("org.jetbrains.dokka")

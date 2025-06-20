@@ -5,20 +5,20 @@ import dev.extframework.gradle.common.extFramework
 plugins {
     kotlin("jvm") version "1.9.21"
 
-    id("dev.extframework.common") version "1.0.52"
+    id("dev.extframework.common") version "1.1"
 }
 
 group = "dev.extframework"
 version = "1.0"
 
+tasks.wrapper {
+    gradleVersion = "8.14.2"
+}
+
 repositories {
     mavenCentral()
     extFramework()
     durganMcBroom()
-}
-
-dependencies {
-    archiveMapper(mcpLegacy = true)
 }
 
 common {

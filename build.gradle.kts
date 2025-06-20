@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "dev.extframework"
-version = "1.0.56"
+version = "1.1"
 
 repositories {
     mavenCentral()
@@ -17,6 +17,7 @@ dependencies {
     implementation("org.jetbrains.dokka:dokka-gradle-plugin:1.9.20")
     implementation("com.gradle.publish:plugin-publish-plugin:1.2.1")
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.21")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.19.0")
     testImplementation(kotlin("test"))
 }
 

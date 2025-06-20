@@ -1,0 +1,71 @@
+{
+  "common-util": {
+    "version": "1.2.1-SNAPSHOT"
+  },
+  "ext-loader": {
+    "version": "2.2-SNAPSHOT"
+  },
+  "boot": {
+    "version": "3.7-SNAPSHOT"
+  },
+  "boot-test": {
+    "version": "3.6.2-SNAPSHOT"
+  },
+  "object-container": {
+    "version": "1.1.2-SNAPSHOT"
+  },
+  "launchermeta-handler": {
+    "version": "1.3.1-SNAPSHOT"
+  },
+  "archive-mapper": {
+    "version": "1.3.6-SNAPSHOT"
+  },
+  "archive-mapper-tiny": {
+    "version": "1.3.6-SNAPSHOT"
+  },
+  "archive-mapper-proguard": {
+    "version": "1.3.6-SNAPSHOT"
+  },
+  "archive-mapper-transform": {
+    "version": "1.3.6-SNAPSHOT"
+  },
+  "archive-mapper-mcp-legacy": {
+    "version": "1.3.6-SNAPSHOT"
+  },
+  "tooling-api": {
+    "version": "1.1-SNAPSHOT"
+  },
+  "archives": {
+    "version": "1.5-SNAPSHOT"
+  },
+  "archives-mixin": {
+    "version": "1.5-SNAPSHOT"
+  },
+  "mixin": {
+    "version": "1.0.2-SNAPSHOT"
+  },
+  "resource-api": {
+    "group": "com.durganmcbroom",
+    "version": "1.2.2-SNAPSHOT"
+  },
+  "jobs": {
+    "group": "com.durganmcbroom",
+    "version": "1.3.2-SNAPSHOT"
+  },
+  "jobs-logging": {
+    "group": "com.durganmcbroom",
+    "version": "1.3.2-SNAPSHOT"
+  },
+  "jobs-progress-simple": {
+    "group": "com.durganmcbroom",
+    "version": "1.3.2-SNAPSHOT"
+  },
+  "artifact-resolver": {
+    "group": "com.durganmcbroom",
+    "version": "1.5-SNAPSHOT"
+  },
+  "artifact-resolver-simple-maven": {
+    "group": "com.durganmcbroom",
+    "version": "1.5-SNAPSHOT"
+  }
+}
