@@ -61,6 +61,10 @@ const val MIXIN = "mixin"
 fun Project.mixin() = buildNotation(MIXIN)
 fun DependencyManagement.mixin(version: String) = MIXIN.set(version)
 
+const val GRADLE_PLUGIN_API = "gradle-plugin-api"
+fun Project.gradlePluginApi() = buildNotation(GRADLE_PLUGIN_API)
+fun DependencyManagement.gradlePluginApi(version: String) = GRADLE_PLUGIN_API.set(version)
+
 // com.durganmcbroom
 
 const val RESOURCE_API = "resource-api"
