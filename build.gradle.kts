@@ -5,8 +5,8 @@ plugins {
     id("com.gradle.plugin-publish") version "1.2.1"
 }
 
-group = "dev.extframework"
-version = "1.1.2"
+group = "com.kaolinmc"
+version = "0.1"
 
 repositories {
     mavenCentral()
@@ -22,15 +22,15 @@ dependencies {
 }
 
 gradlePlugin {
-    website = "https://github.com/extframework"
-    vcsUrl = "https://github.com/extframework/gradle-common"
+    website = "https://github.com/kaolinmc"
+    vcsUrl = "https://github.com/kaolinmc/gradle-common"
 
     plugins {
         create("Gradle Common") {
-            id = "dev.extframework.common"
-            implementationClass = "dev.extframework.gradle.common.CommonPlugin"
-            displayName = "Extension Framework Gradle Common"
-            description = "Common tools for Extension Framework's Gradle configuration."
+            id = "com.kaolinmc.common"
+            implementationClass = "com.kaolinmc.gradle.common.CommonPlugin"
+            displayName = "Kaolin Gradle Common"
+            description = "Common tools for Kaolin's Gradle configuration."
         }
     }
 }
@@ -40,7 +40,7 @@ publishing {
         if (!project.hasProperty("maven-user") || !project.hasProperty("maven-secret")) return@repositories
 
         maven {
-            url = uri("https://maven.extframework.dev/releases")
+            url = uri("https://maven.kaolinmc.com/releases")
 
             credentials {
                 username = project.findProperty("maven-user") as String

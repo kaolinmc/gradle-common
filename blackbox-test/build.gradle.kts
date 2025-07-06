@@ -1,14 +1,13 @@
-import dev.extframework.gradle.common.archiveMapper
-import dev.extframework.gradle.common.durganMcBroom
-import dev.extframework.gradle.common.extFramework
+import com.kaolinmc.gradle.common.durganMcBroom
+import com.kaolinmc.gradle.common.kaolin
 
 plugins {
     kotlin("jvm") version "1.9.21"
 
-    id("dev.extframework.common") version "1.1"
+    id("com.kaolinmc.common") version "0.1"
 }
 
-group = "dev.extframework"
+group = "com.kaolinmc"
 version = "1.0"
 
 tasks.wrapper {
@@ -17,7 +16,7 @@ tasks.wrapper {
 
 repositories {
     mavenCentral()
-    extFramework()
+    kaolin()
     durganMcBroom()
 }
 
@@ -31,15 +30,10 @@ common {
             withDokka()
 
             commonPom {
-                withExtFrameworkRepo()
-
+                withKaolinRepo()
                 defaultDevelopers()
-                extFrameworkScm("blackbox-test")
+                kaolinScm("blackbox-test")
             }
-        }
-
-        this.repositories {
-
         }
     }
 }

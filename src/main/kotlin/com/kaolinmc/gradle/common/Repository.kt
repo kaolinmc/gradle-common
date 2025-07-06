@@ -1,4 +1,4 @@
-package dev.extframework.gradle.common
+package com.kaolinmc.gradle.common
 
 import org.gradle.api.artifacts.dsl.RepositoryHandler
 import java.net.URI
@@ -15,12 +15,12 @@ enum class RepositoryType(
     RELEASES("releases")
 }
 
-fun RepositoryHandler.extFramework(
+fun RepositoryHandler.kaolin(
     type: RepositoryType = RepositoryType.SNAPSHOTS,
     credentials: CommonCredentialProvider? = null
 ) {
     maven {
-        it.url = URI.create("https://maven.extframework.dev/${type.path}")
+        it.url = URI.create("https://maven.kaolinmc.com/${type.path}")
 
         if (credentials != null) it.credentials { creds ->
             creds.username = credentials.user

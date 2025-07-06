@@ -1,4 +1,4 @@
-package dev.extframework.gradle.common
+package com.kaolinmc.gradle.common
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue

@@ -1,4 +1,4 @@
-package dev.extframework.gradle.common
+package com.kaolinmc.gradle.common
 
 import org.gradle.api.Action
 import org.gradle.api.Project
@@ -53,11 +53,11 @@ class CommonPomConfiguration internal constructor(
         }
     }
 
-    fun extFrameworkScm(project: String) {
+    fun kaolinScm(project: String) {
         scm {
-            it.connection.set("scm:git:git://github.com/extframework/$project")
-            it.developerConnection.set("scm:git:ssh://github.com:extframework/$project.git")
-            it.url.set("https://github.com/extframework/$project")
+            it.connection.set("scm:git:git://github.com/kaolinmc/$project")
+            it.developerConnection.set("scm:git:ssh://github.com:kaolinmc/$project.git")
+            it.url.set("https://github.com/kaolinmc/$project")
         }
     }
 
@@ -70,14 +70,14 @@ class CommonPomConfiguration internal constructor(
         }
     }
 
-    fun withExtFrameworkRepo(
+    fun withKaolinRepo(
         type: RepositoryType = RepositoryType.SNAPSHOTS
     ) {
         withXml {
             val repositoriesNode = it.asNode().appendNode("repositories")
-            val extFwkRepoNode = repositoriesNode.appendNode("repository")
-            extFwkRepoNode.appendNode("id", "extframework")
-            extFwkRepoNode.appendNode("url", "https://maven.extframework.dev/${type.path}")
+            val kaolinRepoNode = repositoriesNode.appendNode("repository")
+            kaolinRepoNode.appendNode("id", "kaolin")
+            kaolinRepoNode.appendNode("url", "https://maven.kaolinmc.com/${type.path}")
         }
     }
 

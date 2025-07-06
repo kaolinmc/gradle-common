@@ -1,9 +1,9 @@
-package dev.extframework.gradle.common
+package com.kaolinmc.gradle.common
 
-import dev.extframework.gradle.common.DependencyManagement.Companion.buildNotation
+import com.kaolinmc.gradle.common.DependencyManagement.Companion.buildNotation
 import org.gradle.api.Project
 
-// dev.extframework
+// com.kaolinmc
 
 const val COMMON_UTIL = "common-util"
 fun Project.commonUtil() = buildNotation(COMMON_UTIL)
