@@ -46,7 +46,7 @@
   },
   "resource-api": {
     "group": "com.durganmcbroom",
-    "version": "1.2.2-SNAPSHOT"
+    "version": "1.2.3-SNAPSHOT"
   },
   "jobs": {
     "group": "com.durganmcbroom",
